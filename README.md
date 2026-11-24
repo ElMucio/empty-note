@@ -77,3 +77,7 @@ docs/                  proposta di progetto con i mockup
 
 **Frontend:** HTML5, CSS3 (Flexbox, Grid, media query), JavaScript; Google Fonts e Material Symbols  
 **Backend:** Node.js, Express, MySQL (`mysql2`), `jsonwebtoken`, `bcrypt`, `cookie-parser`
+
+---
+
+Licenza [MIT](LICENSE).
