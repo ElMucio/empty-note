@@ -1,0 +1,18 @@
+{
+  "name": "empty-note",
+  "version": "1.0.0",
+  "description": "Empty Note - bloc-notes online. Progetto per il corso di Programmazione Web e Mobile.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "crea-admin": "node crea-admin.js"
+  },
+  "author": "Luca Sonno",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
+}

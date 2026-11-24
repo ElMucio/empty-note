@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Questa è la home pubblica, la vetrina del sito. -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <!-- Indispensabile per far vedere bene il sito anche sui telefoni -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <!-- Menù in alto. Su mobile diventa un hamburger per risparmiare spazio -->
+  <header>
+    <a href="index.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <!-- Assegno la classe 'attivo' per far capire all'utente in che pagina si trova -->
+        <li><a href="index.html" class="attivo">Home</a></li>
+        <li><a href="informazioni.html">Informazioni</a></li>
+        <li><a href="login.html">Accedi</a></li>
+        <li><a href="registrazione.html">Registrati</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Le tue note,<br>sempre con te.</h1>
+      <p class="slogan">Scrivi, organizza e ritrova le tue annotazioni ovunque e al sicuro.</p>
+      <div class="azioni">
+        <a href="registrazione.html" class="btn btn-primario">Inizia ora, e' gratis</a>
+        <a href="login.html" class="btn btn-secondario">Ho gia' un account</a>
+      </div>
+    </section>
+
+    <section class="sezione">
+      <h2>Come funziona</h2>
+      <p class="intro">Tre semplici passi per iniziare a prendere appunti.</p>
+      <div class="passi">
+        <div class="passo">
+          <div class="numero">1</div>
+          <h3>Registrati</h3>
+          <p>Crea il tuo account in meno di un minuto, gratuitamente.</p>
+        </div>
+        <div class="passo">
+          <div class="numero">2</div>
+          <h3>Crea le tue note</h3>
+          <p>Scrivi e formatta i tuoi appunti con l'editor integrato.</p>
+        </div>
+        <div class="passo">
+          <div class="numero">3</div>
+          <h3>Ritrovale ovunque</h3>
+          <p>Accedi da qualunque dispositivo: le tue note ti aspettano.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questa bacheca viene riempita da JS con le note caricate dal database -->
+    <section class="sezione">
+      <h2>La bacheca di Empty Note</h2>
+      <p class="intro">Funzionalita', novita' e avvisi, direttamente dal nostro team.</p>
+      <div class="bacheca"></div>
+    </section>
+
+    <p class="nota-info">
+      Nota: Attraverso questi post it, l'amministratore comunica novità e informazioni
+      inerenti alla piattaforma. Tienili sempre d'occhio per non farti sfuggire niente.
+    </p>
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Riconoscimenti</h4>
+      <p>Progetto per il corso di</p>
+      <p>Programmazione Web e Mobile.</p>
+    </div>
+    <div class="col">
+      <h4>Risorse utili</h4>
+      <p><a href="informazioni.html">Informazioni sul sito</a></p>
+      <p><a href="registrazione.html">Crea un account</a></p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Carico lo script per far funzionare l'hamburger e la bacheca -->
+  <script src="script/comune.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Qui l'utente vede tutte le sue note. 
+     Ci si entra solo se si è fatto il login prima. -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Le mie note</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <!-- Ci metto lo slash iniziale / perché questa pagina è "sotto" /private -->
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <!-- Menu dell'area privata con le voci specifiche per chi è loggato -->
+  <header>
+    <a href="dashboard.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="dashboard.html" class="attivo">Le mie note</a></li>
+        <li><a href="gestione.html">Gestione</a></li>
+        <li><a href="/index.html" class="logout">Esci</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Il numero esatto di note lo faccio calcolare a JS -->
+    <h1 class="titolo-pagina">Ciao!</h1>
+    <p class="sottotitolo">Hai <span id="conteggio">0</span> note salvate.</p>
+
+    <!-- La barra dove metto la ricerca e i bottoncini per cambiare la vista -->
+    <div class="barra-strumenti">
+      <div class="ricerca">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" id="ricerca" placeholder="Cerca tra le tue note...">
+      </div>
+      <button type="button" id="btn-nuova-nota" class="btn btn-primario">
+        <span class="material-symbols-outlined">add</span> Nuova nota
+      </button>
+
+      <div class="toggle-vista" id="toggle-vista">
+        <button data-vista="card" title="Vista a card">
+          <span class="material-symbols-outlined">grid_view</span>
+        </button>
+        <button data-vista="lista" class="attivo" title="Vista a lista">
+          <span class="material-symbols-outlined">view_list</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Qui dentro JS inserisce dinamicamente le varie note trovate -->
+    <div class="note-griglia vista-lista" id="note-griglia"></div>
+
+    <!-- Se l'utente non ha note oppure cerca qualcosa che non c'è, mostro questi -->
+    <p id="stato-vuoto" class="nota-info" style="display:none;">
+      Non hai ancora nessuna nota. Premi "Nuova nota" per crearne una.
+    </p>
+    <p id="nessun-risultato" class="nota-info" style="display:none;">
+      Nessuna nota corrisponde alla ricerca.
+    </p>
+
+    <section class="sezione-account">
+      <h2>Gestione account</h2>
+      <p>L'eliminazione dell'account &egrave; definitiva e comporta la rimozione di
+      tutte le tue note. L'operazione non pu&ograve; essere annullata.</p>
+      <button class="btn btn-pericolo" id="elimina-account">
+        <span class="material-symbols-outlined">delete_forever</span> Elimina account
+      </button>
+    </section>
+  </main>
+
+  <!-- Il footer qua è molto più stringato rispetto a quello pubblico -->
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Area riservata</h4>
+      <p>Stai usando l'area personale.</p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Popup dei vari messaggi -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Script base più quello specifico della dashboard -->
+  <script src="/script/comune.js"></script>
+  <script src="script/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Sezione per l'amministratore, dove può gestire 
+     i post-it che si vedono in home page. -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Gestione</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <!-- Evidenzio 'Gestione' per ricordare che ci si trova qui -->
+  <header>
+    <a href="dashboard.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="dashboard.html">Le mie note</a></li>
+        <li><a href="gestione.html" class="attivo">Gestione</a></li>
+        <li><a href="/index.html" class="logout">Esci</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="titolo-pagina">Bacheca della Home</h1>
+    <p class="sottotitolo">
+      Pannello riservato all'amministratore. Aggiungi, modifica o rimuovi le
+      note che gli utenti vedono nella pagina iniziale del sito.
+    </p>
+
+    <div class="barra-gestione">
+      <button class="btn btn-primario" id="aggiungi">
+        <span class="material-symbols-outlined">add</span> Aggiungi nota
+      </button>
+      <button class="btn btn-secondario" id="salva">
+        <span class="material-symbols-outlined">save</span> Salva bacheca
+      </button>
+    </div>
+
+    <!-- Le note che tiro giù dal server le inserisco tutte qui dentro -->
+    <div class="bacheca" id="bacheca"></div>
+
+    <p class="nota-info">
+      Clicca dentro una nota per modificarne il titolo o il testo. Usa il cerchio
+      colorato in alto a sinistra per cambiare colore, la "&times;" per
+      eliminare, "Aggiungi nota" per crearne una nuova. Al termine premi
+      "Salva bacheca" per inviare le modifiche al server.
+    </p>
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Area riservata</h4>
+      <p>Pannello amministratore.</p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/script/comune.js"></script>
+  <script src="script/gestione.js"></script>
+</body>
+</html>

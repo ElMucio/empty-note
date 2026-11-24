@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Form per creare un nuovo account. 
+     JS controlla i dati e li spedisce al server. -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Registrazione</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="informazioni.html">Informazioni</a></li>
+        <li><a href="login.html">Accedi</a></li>
+        <li><a href="registrazione.html" class="attivo">Registrati</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Tolgo la validazione di default del browser con novalidate, 
+         faccio tutto io da script per mostrare errori uguali per tutti -->
+    <form class="form-card" id="form-registrazione" novalidate>
+      <h1>Crea il tuo account</h1>
+      <p class="sub">Bastano pochi dati per iniziare.</p>
+
+      <!-- Su PC nome e cognome stanno vicini, su telefono vanno uno sotto l'altro -->
+      <div class="riga-doppia">
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome">
+          <p class="messaggio-errore" id="err-nome">Inserisci il tuo nome.</p>
+        </div>
+        <div class="campo">
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="cognome">
+          <p class="messaggio-errore" id="err-cognome">Inserisci il tuo cognome.</p>
+        </div>
+      </div>
+
+      <div class="riga-doppia">
+        <div class="campo">
+          <label for="genere">Genere</label>
+          <select id="genere" name="genere">
+            <option value="">Seleziona...</option>
+            <option value="non_specificato">Preferisco non specificare</option>
+            <option value="maschio">Maschio</option>
+            <option value="femmina">Femmina</option>
+          </select>
+          <p class="messaggio-errore" id="err-genere">Seleziona un'opzione.</p>
+        </div>
+        <div class="campo">
+          <label for="data_nascita">Data di nascita</label>
+          <!-- Uso type="date" così spunta il calendarietto già fatto del browser -->
+          <input type="date" id="data_nascita" name="data_nascita">
+          <p class="messaggio-errore" id="err-data_nascita">Inserisci la data di nascita.</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="nome@esempio.it">
+        <p class="messaggio-errore" id="err-email">Inserisci un indirizzo e-mail valido.</p>
+      </div>
+
+      <!-- Lo username deve essere unico, ma questo lo controllerà il server -->
+      <div class="campo">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <p class="messaggio-errore" id="err-username">Scegli uno username (almeno 3 caratteri).</p>
+      </div>
+
+      <div class="campo">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <p class="messaggio-errore" id="err-password">La password deve avere almeno 6 caratteri.</p>
+      </div>
+
+      <!-- Controllo al volo da JS se l'utente ha scritto bene la password due volte -->
+      <div class="campo">
+        <label for="ripeti_password">Ripeti password</label>
+        <input type="password" id="ripeti_password" name="ripeti_password">
+        <p class="messaggio-errore" id="err-ripeti_password">Le due password non coincidono.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primario">Registrati</button>
+      <p class="link-secondario">Hai gia' un account? <a href="login.html">Accedi</a></p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Riconoscimenti</h4>
+      <p>Progetto per il corso di</p>
+      <p>Programmazione Web e Mobile.</p>
+    </div>
+    <div class="col">
+      <h4>Risorse utili</h4>
+      <p><a href="index.html">Torna alla home</a></p>
+      <p><a href="informazioni.html">Informazioni sul sito</a></p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Popup per dire se la registrazione è andata a buon fine o no -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Carico gli script che mi servono per menu e form -->
+  <script src="script/comune.js"></script>
+  <script src="script/registrazione.js"></script>
+</body>
+</html>

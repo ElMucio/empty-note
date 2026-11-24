@@ -1,0 +1,3 @@
+node_modules/
+# contiene password del database e chiavi: si crea da config.example.js
+config.js

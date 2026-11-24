@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- Pagina statica per raccontare il progetto -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Informazioni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="informazioni.html" class="attivo">Informazioni</a></li>
+        <li><a href="login.html">Accedi</a></li>
+        <li><a href="registrazione.html">Registrati</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="titolo-pagina">Informazioni sul sito</h1>
+
+    <!-- Ho usato questa classe per far sembrare il div un foglio a righe -->
+    <div class="foglio">
+      <h2>Cos'e' Empty Note</h2>
+      <p>Empty Note e' un'applicazione web che funziona come un bloc-notes
+      online: permette agli utenti registrati di scrivere, organizzare e
+      conservare le proprie note personali, raggiungibili da qualsiasi
+      dispositivo.</p>
+
+      <h2>Il nostro obiettivo</h2>
+      <p>L'obiettivo del sito e' offrire uno strumento semplice e soprattutto sicuro, per
+      avere sempre a disposizione i propri appunti, senza il rischio di
+      perderli e con anche la possibilita' di esportarli/salvarli anche in locale.</p>
+
+      <h2>Tecnologie adottate</h2>
+      <p>Il sito e' realizzato con HTML, CSS e JavaScript per la parte
+      visibile all'utente; il server e' un'applicazione Node.js con Express,
+      collegata a un database MySQL in cui vengono archiviati utenti e note.</p>
+
+      <h2>Trattamento dei dati personali</h2>
+      <p>I dati forniti in fase di registrazione vengono usati unicamente per
+      la gestione dell'account. Le password non sono mai memorizzate in
+      chiaro, ma protette tramite hashing; anche il contenuto delle note viene
+      cifrato prima di essere salvato nel database.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Riconoscimenti</h4>
+      <p>Progetto per il corso di</p>
+      <p>Programmazione Web e Mobile.</p>
+    </div>
+    <div class="col">
+      <h4>Risorse utili</h4>
+      <p><a href="index.html">Torna alla home</a></p>
+      <p><a href="registrazione.html">Crea un account</a></p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Carico lo script base per l'hamburger menu -->
+  <script src="script/comune.js"></script>
+</body>
+</html>

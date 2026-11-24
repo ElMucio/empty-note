@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Pagina di login. I dati vengono inviati al server da login.js
+     e se sono giusti si passa alla dashboard -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Accedi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="informazioni.html">Informazioni</a></li>
+        <li><a href="login.html" class="attivo">Accedi</a></li>
+        <li><a href="registrazione.html">Registrati</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Metto novalidate così blocco i messaggi di errore standard del browser 
+         e gestisco tutto in modo più carino da JavaScript -->
+    <form class="form-card" id="form-login" novalidate>
+      <h1>Bentornato</h1>
+      <p class="sub">Accedi al tuo bloc-notes.</p>
+
+      <!-- Faccio inserire sia email che username, tanto poi il server capisce da solo -->
+      <div class="campo">
+        <label for="identificativo">Username o e-mail</label>
+        <input type="text" id="identificativo" name="identificativo">
+        <p class="messaggio-errore" id="err-identificativo">Inserisci username o e-mail.</p>
+      </div>
+
+      <div class="campo">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <p class="messaggio-errore" id="err-password">Inserisci la password.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primario">Accedi</button>
+      <p class="link-secondario">Non hai un account? <a href="registrazione.html">Registrati</a></p>
+    </form>
+
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Riconoscimenti</h4>
+      <p>Progetto per il corso di</p>
+      <p>Programmazione Web e Mobile.</p>
+    </div>
+    <div class="col">
+      <h4>Risorse utili</h4>
+      <p><a href="index.html">Torna alla home</a></p>
+      <p><a href="informazioni.html">Informazioni sul sito</a></p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Un piccolo popup per mostrare se ci sono stati errori col login -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Carico gli script che mi servono per menu e form -->
+  <script src="script/comune.js"></script>
+  <script src="script/login.js"></script>
+</body>
+</html>

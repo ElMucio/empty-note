@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Pagina dove scrivo o modifico una nota vera e propria. 
+    () Se ha un id nell'url vuol dire che sto modificando una vecchia.) -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty Note - Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="icon" type="image/x-icon" href="/icon.ico">
+</head>
+<body>
+
+  <!-- Menu dell'area privata -->
+  <header>
+    <a href="dashboard.html" class="logo">Empty Note</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">&#9776;</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="dashboard.html">Le mie note</a></li>
+        <li><a href="gestione.html">Gestione</a></li>
+        <li><a href="/index.html" class="logout">Esci</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <a href="dashboard.html" class="link-indietro">&larr; Torna alle note</a>
+
+    <div class="editor-intestazione">
+      <input type="text" class="titolo-nota" id="titolo-nota" placeholder="Titolo della nota">
+    </div>
+
+    <!-- Il data-comando serve a JS 
+         per usare la funzione execCommand e modificare il testo -->
+    <div class="editor-toolbar" id="toolbar">
+      <button type="button" data-comando="bold" title="Grassetto"><b>G</b></button>
+      <button type="button" data-comando="italic" title="Corsivo"><i>C</i></button>
+      <button type="button" data-comando="underline" title="Sottolineato"><u>S</u></button>
+      <span class="separatore"></span>
+      <button type="button" data-comando="justifyLeft" title="Allinea a sinistra">
+        <span class="material-symbols-outlined">format_align_left</span>
+      </button>
+      <button type="button" data-comando="justifyCenter" title="Centra">
+        <span class="material-symbols-outlined">format_align_center</span>
+      </button>
+      <button type="button" data-comando="justifyRight" title="Allinea a destra">
+        <span class="material-symbols-outlined">format_align_right</span>
+      </button>
+
+      <!-- Lascio il selettore del colore del browser perché è già pronto all'uso -->
+      <input type="color" id="colore" value="#34556E" title="Colore testo">
+    </div>
+
+    <!-- contenteditable rende questo div come una casella di testo! -->
+    <div class="area-scrittura" id="area-scrittura" contenteditable="true"></div>
+
+    <div class="editor-azioni">
+      <button class="btn btn-primario" id="btn-salva">
+        <span class="material-symbols-outlined">save</span> Salva
+      </button>
+      <button class="btn btn-secondario" id="btn-scarica">
+        <span class="material-symbols-outlined">download</span> Scarica
+      </button>
+      <button class="btn btn-pericolo" id="btn-elimina">
+        <span class="material-symbols-outlined">delete</span> Elimina
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="col">
+      <h4>Empty Note</h4>
+      <p>&copy; 2026 &mdash; Tutti i diritti riservati.</p>
+    </div>
+    <div class="col">
+      <h4>Area riservata</h4>
+      <p>Editor di nota.</p>
+    </div>
+    <div class="col">
+      <h4>Versione</h4>
+      <p>Empty Note v1.0</p>
+    </div>
+  </footer>
+
+  <!-- Popup dei messaggi -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Script base più quello per far funzionare l'editor -->
+  <script src="/script/comune.js"></script>
+  <script src="script/editor.js"></script>
+</body>
+</html>
